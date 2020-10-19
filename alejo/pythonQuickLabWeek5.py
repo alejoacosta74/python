@@ -3,6 +3,7 @@ import sys
 import os
 import re
 
+#search log file for indicated errors
 
 def error_search(log_file):
     error = input("What is the error? ")
@@ -17,12 +18,13 @@ def error_search(log_file):
         file.close()
     return returned_errors
 
-
+# print found errors to a file
 def file_output(returned_errors):
     with open(os.path.expanduser('~') + '/data/errors_found.log', 'w') as file:
         for error in returned_errors:
             file.write(error)
         file.close()
+
 if __name__ == "__main__":
     log_file = sys.argv[1]
     returned_errors = error_search(log_file)
