@@ -6,8 +6,9 @@ def check_reboot():
   return os.path.exists("/run/reboot-required")
 
 def main():
+  print("...starting script")
+  print ("reboot needed?: {}".format(check_reboot()))
   pass
 
 main()
-print ("reboot needed?: {}\n".format(check_reboot()))
 
